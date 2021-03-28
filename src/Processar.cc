@@ -2,6 +2,7 @@
 #include <fstream>
 
 #include "../include/Processar.h"
+#include "../include/Interpretar.h"
 
 using namespace std;
 
@@ -51,7 +52,13 @@ void Processar::ProcessarArquivo(char *file)
         comandos[i]->setTexto(texto);
     }
     fclose(arquivo);
-    Imprimir();
+    InterpretarArquivo();
+}
+
+void Processar::InterpretarArquivo()
+{
+    interpretar = new Interpretar();
+    interpretar->comandos(comandos, qtdComandos);
 }
 
 void Processar::Imprimir()

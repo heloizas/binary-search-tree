@@ -3,6 +3,9 @@
 
 #include "../include/Processar.h"
 #include "../include/Vetor.h"
+#include "../include/Interpretar.h"
+#include "../include/Arvore.h"
+#include "../include/TipoNo.h"
 
 using namespace std;
 
