@@ -5,7 +5,7 @@ Trabalho prático de Árvore Binária de Pesquisa - Estrutura de Dados - UFMG
 
 <b>Objetivo:</b> Codificar e decodificar mensagens através de uma árvore binária de pesquisa.
 
-<b>Execuçao:</b> Na pasta principal do programa, executar o comando make. Na pasta bin rodar o programa fornecendo o arquivo na linha de comando.
+<b>Execução:</b> Na pasta principal do programa, executar o comando make. Na pasta bin rodar o programa fornecendo o arquivo na linha de comando.
 ```bash
 make
 cd bin
