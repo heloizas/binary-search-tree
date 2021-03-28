@@ -5,47 +5,47 @@ Arvore::Arvore()
     raiz = NULL;
 }
 
-Arvore::Arvore(TipoNo *raiz)
+Arvore::Arvore(TipoNo *auxRaiz)
 {
-    raiz = raiz;
+    raiz = auxRaiz;
 }
 
-void Arvore::insere(char valor)
+void Arvore::insereValor(char valor)
 {
     insereRecursivo(raiz, valor);
 }
 
-void Arvore::insereRecursivo(TipoNo *&referencia, char valor)
+void Arvore::insereRecursivo(TipoNo *&ref, char valor)
 {
-    if (referencia == NULL)
+    if (ref == NULL)
     {
-        referencia = new TipoNo();
-        referencia->setSimbolo(valor);
+        ref = new TipoNo();
+        ref->setSimbolo(valor);
     }
     else
     {
-        if (valor < referencia->getSimbolo())
+        if (valor < ref->getSimbolo())
         {
-            if (referencia->esquerdo == NULL)
+            if (ref->esq == NULL)
             {
-                referencia->esquerdo = new TipoNo();
-                referencia->esquerdo->setSimbolo(valor);
+                ref->esq = new TipoNo();
+                ref->esq->setSimbolo(valor);
             }
             else
             {
-                insereRecursivo(referencia->esquerdo, valor);
+                insereRecursivo(ref->esq, valor);
             }
         }
         else
         {
-            if (referencia->direito == NULL)
+            if (ref->dir == NULL)
             {
-                referencia->direito = new TipoNo();
-                referencia->direito->setSimbolo(valor);
+                ref->dir = new TipoNo();
+                ref->dir->setSimbolo(valor);
             }
             else
             {
-                insereRecursivo(referencia->direito, valor);
+                insereRecursivo(ref->dir, valor);
             }
         }
     }
@@ -54,4 +54,8 @@ void Arvore::insereRecursivo(TipoNo *&referencia, char valor)
 TipoNo *Arvore::getRaiz()
 {
     return raiz;
+}
+
+Arvore::~Arvore()
+{
 }

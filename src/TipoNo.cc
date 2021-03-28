@@ -2,70 +2,75 @@
 
 TipoNo::TipoNo()
 {
-    this->esquerdo = NULL;
-    this->direito = NULL;
+    esq = NULL;
+    dir = NULL;
 }
 
-TipoNo::TipoNo(char simbolo, TipoNo *esquerdo, TipoNo *direito)
+TipoNo::TipoNo(char auxSym)
 {
-    this->simbolo = simbolo;
-    this->esquerdo = esquerdo;
-    this->direito = direito;
+    sym = auxSym;
 }
 
-TipoNo::TipoNo(char simbolo)
+TipoNo::TipoNo(char auxSym, TipoNo *auxEsq, TipoNo *auxDir)
 {
-    this->simbolo = simbolo;
+    sym = auxSym;
+    esq = auxEsq;
+    dir = auxDir;
 }
 
 char TipoNo::getSimbolo()
 {
-    return this->simbolo;
+    return sym;
 }
 
-void TipoNo::setSimbolo(char simbolo)
+void TipoNo::setSimbolo(char auxSym)
 {
-    this->simbolo = simbolo;
+    sym = auxSym;
 }
 
 TipoNo *TipoNo::getEsquerdo()
 {
-    return this->esquerdo;
+    return esq;
 }
 
-void TipoNo::setEsquerdo(TipoNo *esquerdo)
+void TipoNo::setEsquerdo(TipoNo *auxEsq)
 {
-    this->esquerdo = esquerdo;
+    esq = auxEsq;
 }
 
 TipoNo *TipoNo::getDireito()
 {
-    return this->direito;
+    return dir;
 }
 
-void TipoNo::setDireito(TipoNo *direito)
+void TipoNo::setDireito(TipoNo *auxDir)
 {
-    this->direito = direito;
+    dir = auxDir;
 }
 
-string TipoNo::getCodigoCaminho(char letra)
+string TipoNo::getPatch(char letra)
 {
     string codigoCaminho = "";
     TipoNo *aux;
+
     if (letra < getSimbolo())
     {
         codigoCaminho += (((rand() % 5) * 2) + 1) + '0';
         aux = getEsquerdo();
-        return codigoCaminho + aux->getCodigoCaminho(letra);
+        return codigoCaminho + aux->getPatch(letra);
     }
     else if (letra > getSimbolo())
     {
         codigoCaminho += (((rand() % 5) * 2)) + '0';
         aux = getDireito();
-        return codigoCaminho + aux->getCodigoCaminho(letra);
+        return codigoCaminho + aux->getPatch(letra);
     }
     else
     {
         return codigoCaminho;
     }
+}
+
+TipoNo::~TipoNo()
+{
 }

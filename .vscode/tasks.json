@@ -9,8 +9,12 @@
                 "-stdlib=libc++",
                 "-lc++",
                 "-g",
+                "src/Arvore.cc",
+                "src/Interpretar.cc",
                 "src/Main.cc",
-                "src/Test.cc",
+                "src/Processar.cc",
+                "src/TipoNo.cc",
+                "src/Vetor.cc",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
