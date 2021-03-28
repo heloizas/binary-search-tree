@@ -1,7 +1,16 @@
-#include "../include/Test.h"
+#include <iostream>
+#include <fstream>
 
-int main(int argc, char* argv[]) {
-    Test* pTest = new Test();
-    pTest->Print();
+#include "../include/Processar.h"
+#include "../include/Vetor.h"
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    char *file(argv[1]);
+
+    Processar processar(file);
+
     return 0;
 }

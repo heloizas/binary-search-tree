@@ -1,2 +1,2 @@
 teste.exe:
-	g++ Main.cc Test.cc -o teste
+	g++ Main.cc Processar.cc Vetor.cc -o teste
